@@ -154,11 +154,12 @@ document.querySelectorAll("#chips button").forEach(x=>x.setAttribute("aria-press
 const s=SYM[b.dataset.i];$("#symtxt").textContent=s[1]+": "+s[2]};
 function prog(){const n=Object.keys(done).length;$("#prog").textContent=`Bearbeitet: ${n} von ${Q.length}.`;
 $("#wax").style.height=Math.max(18,100-n*(82/Q.length))+"%"}
+function ORD(i){const r=Q[i].o.map((_,j)=>j).filter(j=>!Q[i].o[j][1]);r.splice((i+1)%Q[i].o.length,0,Q[i].o.findIndex(x=>x[1]));return r}
 $("#quiz").innerHTML=Q.map((t,i)=>{
 let body=t.w?`<textarea id="t${i}" aria-label="Deine Antwort" placeholder="Schreibe hier deine Antwort …"></textarea>
 <button class="sub" data-w="${i}" disabled>Antwort abgeben</button>
 <div class="muster" id="m${i}"><b>Musterlösung</b><p>${t.m}</p><p><b>Prüfe dich selbst:</b></p><ul>${t.k.map(x=>`<li>${x}</li>`).join("")}</ul><p class="small">Vergleiche mit deinem Text: Welche Punkte hast du schon erfüllt? Ergänze fehlende Punkte ruhig.</p></div>`
-:t.o.map((o,j)=>`<button class="opt" data-q="${i}" data-j="${j}">${o[0]}</button>`).join("")+`<div class="fb" id="f${i}" aria-live="polite"></div>`;
+:ORD(i).map(j=>`<button class="opt" data-q="${i}" data-j="${j}">${t.o[j][0]}</button>`).join("")+`<div class="fb" id="f${i}" aria-live="polite"></div>`;
 return `<div class="card"><h3>Aufgabe ${i+1}</h3><p>${t.q}</p><details><summary>Tipp (freiwillig)</summary><p>${t.h}</p></details>${body}</div>`}).join("");
 $("#quiz").addEventListener("input",e=>{const t=e.target;if(t.tagName==="TEXTAREA"){const i=t.id.slice(1);
 document.querySelector(`[data-w="${i}"]`).disabled=t.value.trim().length<25||done[i]}});
@@ -169,7 +170,7 @@ const b=e.target.closest(".opt");if(!b)return;
 const i=+b.dataset.q,j=+b.dataset.j,o=Q[i].o[j];if(done[i]!==undefined)return;
 done[i]=o[1];if(o[1])first++;
 const bs=document.querySelectorAll(`[data-q="${i}"]`);
-bs.forEach((x,k)=>{x.disabled=true;if(Q[i].o[k][1])x.classList.add("ok");else if(k===j)x.classList.add("bad")});
+bs.forEach(x=>{const k=+x.dataset.j;x.disabled=true;if(Q[i].o[k][1])x.classList.add("ok");else if(k===j)x.classList.add("bad")});
 const f=$("#f"+i);f.className="fb show";f.innerHTML=o[2]+(o[1]?"":`<br><b>Richtig wäre:</b> ${Q[i].o.find(x=>x[1])[2].replace("Richtig: ","")}`);
 prog()});
 const TOP=["Vanitas erklären","Memento mori erklären","Carpe diem erklären","Das Welttheater erklären","Ein Vanitas-Stillleben deuten"];
