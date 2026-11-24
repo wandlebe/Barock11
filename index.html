@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Barock – Alles vergeht: Einstieg für Deutsch 11</title>
+<style>
+:root{--bg:#ecebe8;--card:#f7f6f3;--ink:#1c1a1d;--mute:#5d5860;--acc:#6b1226;--gold:#8a6417;--line:#c9c5bd;--ok:#1f6b3a;--bad:#9b2335;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141016;--card:#1f1923;--ink:#ece4d8;--mute:#a9a0a8;--acc:#e08a9a;--gold:#d4a84b;--line:#3a3040;--ok:#7bd49a;--bad:#f08a98;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141016;--card:#1f1923;--ink:#ece4d8;--mute:#a9a0a8;--acc:#e08a9a;--gold:#d4a84b;--line:#3a3040;--ok:#7bd49a;--bad:#f08a98;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.08rem/1.65 "Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif}
+main,header{max-width:44rem;margin:0 auto;padding:0 1.1rem}
+header{display:flex;align-items:flex-end;gap:1rem;padding-top:1.2rem;border-bottom:1px solid var(--line)}
+#candle{width:14px;height:56px;position:relative;flex:none;margin-bottom:-1px}
+#wax{position:absolute;bottom:0;left:0;right:0;background:var(--gold);border-radius:2px 2px 0 0;height:100%;transition:height .6s}
+#wax::before{content:"";position:absolute;left:3px;top:-12px;width:8px;height:12px;border-radius:50% 50% 50% 50%/70% 70% 30% 30%;background:var(--acc)}
+nav{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem}
+nav button{font:inherit;background:none;border:0;border-bottom:3px solid transparent;padding:.5rem 0;color:var(--mute);cursor:pointer}
+nav button[aria-current="true"]{color:var(--ink);border-color:var(--acc);font-weight:700}
+h1{font-size:clamp(2.4rem,9vw,4.2rem);line-height:1.05;margin:2.2rem 0 1rem;font-style:italic;font-weight:400;letter-spacing:-.01em}
+h2{font-size:1.7rem;margin:2rem 0 .6rem;font-weight:400;font-style:italic}
+h3{margin:0 0 .3rem;font-size:1.15rem}
+p{margin:.5rem 0}
+section{display:none;padding-bottom:3rem}
+section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:3px;padding:1rem 1.1rem;margin:1rem 0}
+.latin{font-style:italic;color:var(--gold);font-weight:700}
+blockquote{margin:.6rem 0;padding-left:1rem;border-left:2px solid var(--line);font-style:italic}
+button.go,button.opt,button.sub,button.sa{font:inherit;cursor:pointer;border-radius:3px}
+button.go{background:var(--acc);color:var(--bg);border:0;padding:.65rem 1.2rem;margin-top:1rem;font-weight:700}
+button.opt{display:block;width:100%;text-align:left;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:.6rem .8rem;margin:.4rem 0}
+button.opt:hover:not(:disabled){border-color:var(--gold)}
+button.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--bg))}
+button.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--bg))}
+button:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+button:disabled{cursor:default}
+details{margin:.5rem 0;color:var(--mute)}
+summary{cursor:pointer}
+.fb{margin:.5rem 0 0;padding:.5rem .7rem;border-radius:3px;display:none}
+.fb.show{display:block;background:var(--bg);border:1px solid var(--line)}
+textarea{width:100%;min-height:7rem;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:.6rem}
+button.sub{background:var(--gold);color:var(--bg);border:0;padding:.5rem 1rem;margin-top:.5rem;font-weight:700}
+button.sub:disabled{opacity:.45}
+.muster{display:none;margin-top:.8rem;padding:.7rem .9rem;border:1px dashed var(--gold);border-radius:3px}
+.muster.show{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips button{font:inherit;font-size:1rem;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:3px;padding:.4rem .7rem;cursor:pointer}
+.chips button[aria-pressed="true"]{border-color:var(--gold)}
+table{border-collapse:collapse;width:100%;font-size:1rem}
+td,th{border-bottom:1px solid var(--line);padding:.45rem .5rem;text-align:left;vertical-align:top}
+div.sa{margin:.8rem 0}
+div.sa div{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem}
+button.sa{background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:.35rem .7rem;font-size:.95rem}
+button.sa[aria-pressed="true"]{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 20%,var(--bg));font-weight:700}
+.small{color:var(--mute);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){#wax{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<div id="candle" aria-hidden="true"><div id="wax"></div></div>
+<nav aria-label="Abschnitte"></nav>
+</header>
+<main>
+
+<section id="start">
+<h1>Alles vergeht.</h1>
+<p>Prächtige Kirchen, Schlösser voller Gold – und mittendrin Totenschädel auf Gemälden. Die Menschen des Barock (ca. 1600–1720) liebten Glanz und dachten gleichzeitig ständig an den Tod. Warum?</p>
+<p>In dieser Lerneinheit lernst du die wichtigsten Motive der Epoche kennen. Vorwissen brauchst du nicht.</p>
+<div class="card"><h3>Ablauf (ca. 30 Minuten)</h3>
+<p><b>Erklären:</b> vier Motive und ihre Symbole.<br><b>Üben:</b> acht Aufgaben mit sofortiger Rückmeldung. Zu jeder Aufgabe gibt es einen freiwilligen Tipp.<br><b>Abschluss:</b> Zusammenfassung und Selbsteinschätzung.</p>
+<p class="small">Die Kerze oben brennt herunter, während du arbeitest – passend zum Thema.</p></div>
+<button class="go" data-go="erklaeren">Los geht’s</button>
+</section>
+
+<section id="erklaeren">
+<h2>Die Epoche im Überblick</h2>
+<p>Der Barock reicht ungefähr von 1600 bis 1720. In diese Zeit fällt der <b>Dreißigjährige Krieg (1618–1648)</b> mit Gewalt, Hunger und Seuchen. Viele Menschen erlebten, wie schnell das Leben enden kann. Zugleich entstanden prunkvolle Bauten wie die Würzburger Residenz oder die Asamkirche in München. Dieser Gegensatz aus Pracht und Vergänglichkeit prägt die Motive des Barock. Die Gesellschaft war stark christlich geprägt: Das Leben auf der Erde galt als kurz, das Jenseits als das eigentliche Ziel.</p>
+
+<h2>Vier Motive</h2>
+<div class="card"><h3><span class="latin">Vanitas</span> – Vergänglichkeit</h3>
+<p>Lateinisch für „Nichtigkeit“ oder „Eitelkeit“. Alles Irdische – Schönheit, Reichtum, Macht, Ruhm – vergeht. Der Dichter Andreas Gryphius (1616–1664) schreibt:</p>
+<blockquote>„Du siehst, wohin du siehst, nur Eitelkeit auf Erden. / Was dieser heute baut, reißt jener morgen ein.“</blockquote>
+<p class="small">Hier bedeutet „Eitelkeit“ also nicht „Selbstverliebtheit“, sondern „Nichtigkeit“.</p></div>
+
+<div class="card"><h3><span class="latin">Memento mori</span> – Bedenke, dass du sterben musst</h3>
+<p>Eine Mahnung: Der Tod trifft alle, Könige wie Bauern. Wer das bedenkt, soll sein Leben verantwortungsvoll und gottgefällig führen, statt sich an Äußerlichkeiten zu hängen.</p></div>
+
+<div class="card"><h3><span class="latin">Carpe diem</span> – Nutze den Tag</h3>
+<p>Das Gegenstück: Weil das Leben kurz ist, soll man es jetzt genießen. Der Ausdruck stammt von dem römischen Dichter Horaz. Im Barock steht dieser Gedanke oft in Spannung zum frommen Leben und kommt etwa in Liebes- und Trinkliedern vor.</p></div>
+
+<div class="card"><h3><span class="latin">Theatrum mundi</span> – Welttheater</h3>
+<p>Die Welt ist eine Bühne, die Menschen spielen darauf Rollen (König, Bettler, Liebhaber). Wenn das Stück zu Ende ist, legen alle ihre Rollen ab. Das Bild betont, dass Stand und Besitz nur geliehen sind.</p></div>
+
+<h2>Symbole in Stillleben</h2>
+<p>Vanitas-Stillleben sind Gemälde mit Gegenständen, die Vergänglichkeit anzeigen. Tippe auf ein Symbol:</p>
+<div class="chips" id="chips"></div>
+<p id="symtxt" class="card" aria-live="polite">Wähle ein Symbol aus.</p>
+<button class="go" data-go="ueben">Weiter zu den Übungen</button>
+</section>
+
+<section id="ueben">
+<h2>Übungen</h2>
+<p>Bei den Auswahlaufgaben bekommst du sofort eine Rückmeldung mit Begründung. Bei den Schreibaufgaben schaltest du die Musterlösung nach deinem Versuch frei. <span id="prog" class="small"></span></p>
+<div id="quiz"></div>
+<button class="go" data-go="abschluss">Weiter zum Abschluss</button>
+</section>
+
+<section id="abschluss">
+<h2>Zusammenfassung</h2>
+<table>
+<tr><th>Motiv</th><th>Kernaussage</th><th>Symbol oder Beispiel</th></tr>
+<tr><td>Vanitas</td><td>Alles Irdische vergeht.</td><td>welkende Rose, Seifenblase</td></tr>
+<tr><td>Memento mori</td><td>Denke an deinen Tod.</td><td>Totenschädel</td></tr>
+<tr><td>Carpe diem</td><td>Nutze die kurze Zeit zum Genuss.</td><td>Liebes- und Trinklieder</td></tr>
+<tr><td>Theatrum mundi</td><td>Die Welt ist eine Bühne, Rollen sind geliehen.</td><td>König und Bettler als Rollen</td></tr>
+</table>
+<p id="score" class="card"></p>
+<h2>Selbsteinschätzung</h2>
+<p class="small">Wie sicher fühlst du dich? Antworte ehrlich, das hilft nur dir.</p>
+<div id="sa"></div>
+<p id="sares" class="card" aria-live="polite" style="display:none"></p>
+<p>Wenn du magst, vergleiche die Motive als Nächstes mit einem Text von heute: Wo finden sich Vergänglichkeit oder „Lebe im Moment“?</p>
+<button class="go" id="reset">Alles zurücksetzen</button>
+</section>
+</main>
+
+<script>
+const SECS=[["start","Start"],["erklaeren","Erklären"],["ueben","Üben"],["abschluss","Abschluss"]];
+const SYM=[["💀","Totenschädel","Erinnert an den Tod und gehört zum Motiv memento mori."],["⏳","Sanduhr","Die Zeit läuft ab. Das Leben ist begrenzt."],["🕯️","Kerze","Eine herunterbrennende oder erloschene Kerze zeigt, dass ein Leben verlöschen kann."],["🌹","Rose","Eine Blume blüht schön, aber nur kurz. Schönheit vergeht."],["🫧","Seifenblase","Sie ist schön, aber zerplatzt im Nu – ein Bild für ein flüchtiges Leben."]];
+const Q=[
+{q:"Was bedeutet das lateinische Wort „Vanitas“ im Barock?",h:"Gryphius schreibt: „nur Eitelkeit auf Erden“. Überlege, was „Eitelkeit“ hier heißt.",o:[["Nichtigkeit und Vergänglichkeit alles Irdischen",1,"Richtig: Vanitas meint, dass Besitz, Schönheit und Macht keinen Bestand haben."],["Lebensfreude und Genuss",0,"Nicht ganz: Das wäre eher carpe diem."],["Ruhm über den Tod hinaus",0,"Nicht ganz: Im Barock gilt auch Ruhm als vergänglich."]]},
+{q:"Ein Stillleben zeigt einen Totenschädel, eine Sanduhr und eine welkende Rose. Was ist die Hauptaussage?",h:"Was haben alle drei Gegenstände mit Zeit und Tod zu tun?",o:[["Das Leben ist kurz und der Tod unausweichlich.",1,"Richtig: Schädel (Tod), Sanduhr (ablaufende Zeit) und welkende Rose (vergehende Schönheit) verweisen alle auf Vergänglichkeit."],["Der Maler will den Wert seines Besitzes zeigen.",0,"Nicht ganz: Die Gegenstände zeigen gerade, dass Besitz nicht bleibt."],["Das Bild feiert die Schönheit des Frühlings.",0,"Nicht ganz: Eine welkende Rose steht für Verfall, nicht für Frühling."]]},
+{q:"Ein Spruch lautet: „Genieße den heutigen Tag, denn morgen kann es schon vorbei sein.“ Welches Motiv passt?",h:"Wird hier zum Genießen aufgerufen oder an den Tod erinnert?",o:[["Carpe diem",1,"Richtig: Der Spruch fordert dazu auf, den Tag zu nutzen und zu genießen."],["Memento mori",0,"Nicht ganz: Memento mori mahnt vor allem, den Tod zu bedenken. Zum Genießen fordert es nicht auf."],["Theatrum mundi",0,"Nicht ganz: Hier geht es nicht um die Welt als Bühne."]]},
+{q:"Gryphius: „Was dieser heute baut, reißt jener morgen ein.“ Welches Motiv steckt darin?",h:"Es geht um Menschenwerk, das keinen Bestand hat.",o:[["Vanitas",1,"Richtig: Selbst das, was Menschen bauen, hat keinen Bestand."],["Carpe diem",0,"Nicht ganz: Der Vers fordert nicht zum Genuss auf."],["Theatrum mundi",0,"Nicht ganz: Von einer Bühne oder von Rollen ist nicht die Rede."]]},
+{q:"Warum war Vergänglichkeit für die Menschen im Barock so gegenwärtig?",h:"Denke an die Jahre 1618 bis 1648.",o:[["Der Dreißigjährige Krieg, Seuchen und Hunger zeigten täglich, wie zerbrechlich das Leben ist.",1,"Richtig: Die Erfahrung von Krieg und Massensterben prägte das Lebensgefühl."],["Religion spielte kaum noch eine Rolle.",0,"Nicht ganz: Die Gesellschaft war stark christlich geprägt, und das Jenseits war wichtig."],["Die Industrialisierung veränderte das Leben rasant.",0,"Nicht ganz: Die Industrialisierung begann erst im 19. Jahrhundert."]]},
+{q:"Was meint das Motiv „theatrum mundi“ (Welttheater)?",h:"Übersetze: theatrum = Theater, mundi = der Welt.",o:[["Die Welt ist eine Bühne, auf der Menschen nur Rollen spielen.",1,"Richtig: Nach dem Stück endet jede Rolle. Stand und Besitz sind nur geliehen."],["Fürsten ließen besonders viele Theater bauen.",0,"Nicht ganz: Das Motiv ist ein Bild für das Leben, keine Aussage über Bauten."],["Das Publikum spielt im Theater mit.",0,"Nicht ganz: Mit einer Theaterform hat das Motiv nichts zu tun."]]},
+{w:1,q:"Schreibaufgabe: Beschreibe in 2–3 Sätzen ein Stillleben mit Totenschädel, brennender Kerze, Rose und Sanduhr. Was ist zu sehen, und was soll der Betrachter erkennen?",h:"Nenne erst die Gegenstände, dann ihre Bedeutung. Verwende die Fachbegriffe Vanitas und memento mori.",m:"Auf dem Stillleben sind ein Totenschädel, eine fast heruntergebrannte Kerze, eine Rose und eine Sanduhr zu sehen. Alle Gegenstände stehen für Vergänglichkeit: Die Sanduhr zeigt, dass die Zeit abläuft, die Kerze, dass ein Leben verlöschen kann, und die Rose, dass Schönheit welkt. Der Totenschädel erinnert an den Tod. Der Betrachter soll erkennen, dass alles Irdische vergeht (Vanitas) und dass er an seinen eigenen Tod denken soll (memento mori).",k:["Mindestens drei Gegenstände benannt","Bedeutung jedes Gegenstands erklärt","Fachbegriff Vanitas oder memento mori verwendet","Aussage für den Betrachter formuliert"]},
+{w:1,q:"Schreibaufgabe: Nenne ein Beispiel von heute (Social Media, Film, Song, Werbung), in dem Vergänglichkeit oder „Lebe im Moment“ vorkommt. Ordne es einem Barockmotiv zu und begründe.",h:"Wird zum Genießen aufgerufen (carpe diem) oder an Tod und Vergänglichkeit erinnert (memento mori, Vanitas)?",m:"Beispiel: Ein Reel mit dem Hashtag #YOLO, in dem jemand spontan eine Reise antritt. Das passt zu carpe diem, weil dazu aufgerufen wird, den Moment zu nutzen, statt zu warten. Anders als im Barock fehlt meist der Gedanke an das Jenseits. Andere Beispiele sind möglich, wenn die Zuordnung begründet ist.",k:["Konkretes Beispiel genannt","Passendes Motiv zugeordnet","Zuordnung begründet","Unterschied zum Barock bedacht (freiwillig)"]}
+];
+let done={},first=0,sa={};
+const $=s=>document.querySelector(s);
+function go(id){SECS.forEach(([s])=>$("#"+s).classList.toggle("on",s===id));
+document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.go===id));
+if(id==="abschluss")sum();try{window.scrollTo(0,0)}catch(e){}}
+$("nav").innerHTML=SECS.map(([s,t])=>`<button data-go="${s}">${t}</button>`).join("");
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)go(g.dataset.go)});
+$("#chips").innerHTML=SYM.map((s,i)=>`<button data-i="${i}" aria-pressed="false">${s[0]} ${s[1]}</button>`).join("");
+$("#chips").onclick=e=>{const b=e.target.closest("button");if(!b)return;
+document.querySelectorAll("#chips button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+const s=SYM[b.dataset.i];$("#symtxt").textContent=s[1]+": "+s[2]};
+function prog(){const n=Object.keys(done).length;$("#prog").textContent=`Bearbeitet: ${n} von ${Q.length}.`;
+$("#wax").style.height=Math.max(18,100-n*(82/Q.length))+"%"}
+$("#quiz").innerHTML=Q.map((t,i)=>{
+let body=t.w?`<textarea id="t${i}" aria-label="Deine Antwort" placeholder="Schreibe hier deine Antwort …"></textarea>
+<button class="sub" data-w="${i}" disabled>Antwort abgeben</button>
+<div class="muster" id="m${i}"><b>Musterlösung</b><p>${t.m}</p><p><b>Prüfe dich selbst:</b></p><ul>${t.k.map(x=>`<li>${x}</li>`).join("")}</ul><p class="small">Vergleiche mit deinem Text: Welche Punkte hast du schon erfüllt? Ergänze fehlende Punkte ruhig.</p></div>`
+:t.o.map((o,j)=>`<button class="opt" data-q="${i}" data-j="${j}">${o[0]}</button>`).join("")+`<div class="fb" id="f${i}" aria-live="polite"></div>`;
+return `<div class="card"><h3>Aufgabe ${i+1}</h3><p>${t.q}</p><details><summary>Tipp (freiwillig)</summary><p>${t.h}</p></details>${body}</div>`}).join("");
+$("#quiz").addEventListener("input",e=>{const t=e.target;if(t.tagName==="TEXTAREA"){const i=t.id.slice(1);
+document.querySelector(`[data-w="${i}"]`).disabled=t.value.trim().length<25||done[i]}});
+$("#quiz").addEventListener("click",e=>{
+const w=e.target.closest("[data-w]");
+if(w){const i=w.dataset.w;done[i]=1;$("#m"+i).classList.add("show");w.disabled=true;$("#t"+i).readOnly=true;prog();return}
+const b=e.target.closest(".opt");if(!b)return;
+const i=+b.dataset.q,j=+b.dataset.j,o=Q[i].o[j];if(done[i]!==undefined)return;
+done[i]=o[1];if(o[1])first++;
+const bs=document.querySelectorAll(`[data-q="${i}"]`);
+bs.forEach((x,k)=>{x.disabled=true;if(Q[i].o[k][1])x.classList.add("ok");else if(k===j)x.classList.add("bad")});
+const f=$("#f"+i);f.className="fb show";f.innerHTML=o[2]+(o[1]?"":`<br><b>Richtig wäre:</b> ${Q[i].o.find(x=>x[1])[2].replace("Richtig: ","")}`);
+prog()});
+const TOP=["Vanitas erklären","Memento mori erklären","Carpe diem erklären","Das Welttheater erklären","Ein Vanitas-Stillleben deuten"];
+$("#sa").innerHTML=TOP.map((t,i)=>`<div class="sa"><span>Ich kann: ${t}</span><div>${["Sicher","Teils","Noch nicht"].map((l,k)=>`<button class="sa" data-s="${i}" data-k="${k}" aria-pressed="false">${l}</button>`).join("")}</div></div>`).join("");
+$("#sa").onclick=e=>{const b=e.target.closest("button");if(!b)return;sa[b.dataset.s]=+b.dataset.k;
+document.querySelectorAll(`[data-s="${b.dataset.s}"]`).forEach(x=>x.setAttribute("aria-pressed",x===b));
+const r=$("#sares"),weak=TOP.filter((t,i)=>sa[i]>0);
+if(Object.keys(sa).length<TOP.length){r.style.display="none";return}
+r.style.display="block";r.textContent=weak.length?"Schau dir diese Punkte noch einmal im Erklärteil an: "+weak.join(", ")+". Du kannst auch die Aufgaben dazu wiederholen.":"Sehr gut, du fühlst dich bei allen Punkten sicher. Teste dich im Unterricht an einem Gedicht von Gryphius."};
+function sum(){const n=Q.filter(t=>!t.w).length;
+$("#score").textContent=`Auswahlaufgaben: ${first} von ${n} gleich beim ersten Versuch richtig. Schreibaufgaben bearbeitet: ${Object.keys(done).filter(i=>Q[i].w).length} von ${Q.length-n}.`}
+$("#reset").onclick=()=>location.reload();
+prog();go("start");
+</script>
+</body>
+</html>
